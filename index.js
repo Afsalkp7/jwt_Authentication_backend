@@ -9,7 +9,7 @@ import loginRouter from './routes/login.js'
 import dashboardRouter from './routes/dashboardRouter.js'
 
 const app = express()
-
+app.use(cookieParser())
 app.use(express.json())
 app.use(cors({
     origin:["http://localhost:5173/"],
