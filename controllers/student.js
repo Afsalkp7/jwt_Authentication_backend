@@ -1,9 +1,9 @@
 import studentCollection from '../model/student.js';
 import jwt from "jsonwebtoken"
 
-export const registerStudent = async (req,res) => {
+export const registerStudent = (req,res) => {
     const {email,password} = req.body;
-    await studentCollection.create({email,password})
+    studentCollection.create({email,password})
     .then(user=>res.json(user))
     .catch(err=>res.json(err))
 }
