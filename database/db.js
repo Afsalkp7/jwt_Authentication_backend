@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
-const MONGODB_URI = "mongodb+srv://afsalkpmanu31:afsalkp123@cluster0.yzytvxu.mongodb.net/jwtauth?retryWrites=true&w=majority&appName=Cluster0";
+import dotenv from 'dotenv'
+dotenv.config()
+
+
+const MONGODB_URI = process.env.MONGODB_URI;
 
 export default mongoose.connect(MONGODB_URI)
 .then(()=>console.log("connected"))
